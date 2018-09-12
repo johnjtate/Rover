@@ -13,7 +13,10 @@
 		873E8A142149C6BA007749C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A122149C6BA007749C3 /* LaunchScreen.storyboard */; };
 		873E8A172149C6BB007749C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A162149C6BB007749C3 /* main.m */; };
 		873E8A1E2149C6DD007749C3 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A1D2149C6DD007749C3 /* APIKeys.plist */; };
-		873E8A262149C741007749C3 /* Rover.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A252149C741007749C3 /* Rover.m */; };
+		873E8A262149C741007749C3 /* JJTRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A252149C741007749C3 /* JJTRover.m */; };
+		873E8A292149C787007749C3 /* JJTPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A282149C787007749C3 /* JJTPhoto.m */; };
+		873E8A2C2149C793007749C3 /* JJTSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A2B2149C793007749C3 /* JJTSol.m */; };
+		873E8A2E2149CB93007749C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A2D2149CB93007749C3 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +29,13 @@
 		873E8A152149C6BA007749C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		873E8A162149C6BB007749C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		873E8A1D2149C6DD007749C3 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
-		873E8A242149C741007749C3 /* Rover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rover.h; sourceTree = "<group>"; };
-		873E8A252149C741007749C3 /* Rover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rover.m; sourceTree = "<group>"; };
+		873E8A242149C741007749C3 /* JJTRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTRover.h; sourceTree = "<group>"; };
+		873E8A252149C741007749C3 /* JJTRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTRover.m; sourceTree = "<group>"; };
+		873E8A272149C787007749C3 /* JJTPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTPhoto.h; sourceTree = "<group>"; };
+		873E8A282149C787007749C3 /* JJTPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTPhoto.m; sourceTree = "<group>"; };
+		873E8A2A2149C793007749C3 /* JJTSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTSol.h; sourceTree = "<group>"; };
+		873E8A2B2149C793007749C3 /* JJTSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTSol.m; sourceTree = "<group>"; };
+		873E8A2D2149CB93007749C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 		873E89FB2149C6BA007749C3 = {
 			isa = PBXGroup;
 			children = (
+				873E8A2D2149CB93007749C3 /* Default-568h@2x.png */,
 				873E8A062149C6BA007749C3 /* Rover */,
 				873E8A052149C6BA007749C3 /* Products */,
 			);
@@ -108,8 +117,12 @@
 		873E8A232149C721007749C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				873E8A242149C741007749C3 /* Rover.h */,
-				873E8A252149C741007749C3 /* Rover.m */,
+				873E8A242149C741007749C3 /* JJTRover.h */,
+				873E8A252149C741007749C3 /* JJTRover.m */,
+				873E8A272149C787007749C3 /* JJTPhoto.h */,
+				873E8A282149C787007749C3 /* JJTPhoto.m */,
+				873E8A2A2149C793007749C3 /* JJTSol.h */,
+				873E8A2B2149C793007749C3 /* JJTSol.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +187,7 @@
 				873E8A142149C6BA007749C3 /* LaunchScreen.storyboard in Resources */,
 				873E8A1E2149C6DD007749C3 /* APIKeys.plist in Resources */,
 				873E8A112149C6BA007749C3 /* Assets.xcassets in Resources */,
+				873E8A2E2149CB93007749C3 /* Default-568h@2x.png in Resources */,
 				873E8A0F2149C6BA007749C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873E8A262149C741007749C3 /* Rover.m in Sources */,
+				873E8A292149C787007749C3 /* JJTPhoto.m in Sources */,
+				873E8A262149C741007749C3 /* JJTRover.m in Sources */,
+				873E8A2C2149C793007749C3 /* JJTSol.m in Sources */,
 				873E8A172149C6BB007749C3 /* main.m in Sources */,
 				873E8A092149C6BA007749C3 /* AppDelegate.m in Sources */,
 			);
@@ -329,7 +345,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74SYWHWN72;
-				INFOPLIST_FILE = Rover/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Rover/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74SYWHWN72;
-				INFOPLIST_FILE = Rover/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Rover/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

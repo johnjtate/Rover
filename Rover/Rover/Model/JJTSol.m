@@ -1,13 +1,17 @@
 //
-//  Rover.h
+//  Sol.m
 //  Rover
 //
 //  Created by John Tate on 9/12/18.
 //  Copyright © 2018 John Tate. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "JJTSol.h"
 
-@interface Rover : NSObject
+@implementation JJTSol
+
+
+
+
 
 @end
