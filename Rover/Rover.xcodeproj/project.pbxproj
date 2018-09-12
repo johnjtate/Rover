@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87A930012149C1B600003807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A930002149C1B600003807 /* AppDelegate.swift */; };
-		87A930032149C1B600003807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A930022149C1B600003807 /* ViewController.swift */; };
-		87A930062149C1B600003807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A930042149C1B600003807 /* Main.storyboard */; };
-		87A930082149C1B700003807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A930072149C1B700003807 /* Assets.xcassets */; };
-		87A9300B2149C1B700003807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A930092149C1B700003807 /* LaunchScreen.storyboard */; };
-		87A930182149C42A00003807 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87A930172149C42A00003807 /* APIKeys.plist */; };
-		87A9301C2149C69100003807 /* JJTRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9301B2149C69100003807 /* JJTRover.m */; };
+		873E8A092149C6BA007749C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A082149C6BA007749C3 /* AppDelegate.m */; };
+		873E8A0F2149C6BA007749C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A0D2149C6BA007749C3 /* Main.storyboard */; };
+		873E8A112149C6BA007749C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A102149C6BA007749C3 /* Assets.xcassets */; };
+		873E8A142149C6BA007749C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A122149C6BA007749C3 /* LaunchScreen.storyboard */; };
+		873E8A172149C6BB007749C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A162149C6BB007749C3 /* main.m */; };
+		873E8A1E2149C6DD007749C3 /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873E8A1D2149C6DD007749C3 /* APIKeys.plist */; };
+		873E8A262149C741007749C3 /* Rover.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A252149C741007749C3 /* Rover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87A92FFD2149C1B600003807 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87A930002149C1B600003807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87A930022149C1B600003807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		87A930052149C1B600003807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		87A930072149C1B700003807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		87A9300A2149C1B700003807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		87A9300C2149C1B700003807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87A930172149C42A00003807 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
-		87A930192149C69100003807 /* Rover-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rover-Bridging-Header.h"; sourceTree = "<group>"; };
-		87A9301A2149C69100003807 /* JJTRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTRover.h; sourceTree = "<group>"; };
-		87A9301B2149C69100003807 /* JJTRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTRover.m; sourceTree = "<group>"; };
+		873E8A042149C6BA007749C3 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		873E8A072149C6BA007749C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		873E8A082149C6BA007749C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		873E8A0E2149C6BA007749C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		873E8A102149C6BA007749C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		873E8A132149C6BA007749C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		873E8A152149C6BA007749C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		873E8A162149C6BB007749C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		873E8A1D2149C6DD007749C3 /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		873E8A242149C741007749C3 /* Rover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rover.h; sourceTree = "<group>"; };
+		873E8A252149C741007749C3 /* Rover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		87A92FFA2149C1B600003807 /* Frameworks */ = {
+		873E8A012149C6BA007749C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,75 +41,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		87A92FF42149C1B600003807 = {
+		873E89FB2149C6BA007749C3 = {
 			isa = PBXGroup;
 			children = (
-				87A92FFF2149C1B600003807 /* Rover */,
-				87A92FFE2149C1B600003807 /* Products */,
+				873E8A062149C6BA007749C3 /* Rover */,
+				873E8A052149C6BA007749C3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		87A92FFE2149C1B600003807 /* Products */ = {
+		873E8A052149C6BA007749C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87A92FFD2149C1B600003807 /* Rover.app */,
+				873E8A042149C6BA007749C3 /* Rover.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87A92FFF2149C1B600003807 /* Rover */ = {
+		873E8A062149C6BA007749C3 /* Rover */ = {
 			isa = PBXGroup;
 			children = (
-				87A930162149C29200003807 /* Model */,
-				87A930152149C28800003807 /* Model Controllers */,
-				87A930142149C28200003807 /* View Controllers */,
-				87A930132149C27D00003807 /* Views */,
-				87A930122149C27500003807 /* Resources */,
+				873E8A232149C721007749C3 /* Model */,
+				873E8A222149C718007749C3 /* Model Controllers */,
+				873E8A212149C710007749C3 /* View Controllers */,
+				873E8A202149C70C007749C3 /* Views */,
+				873E8A1F2149C6F8007749C3 /* Resources */,
 			);
 			path = Rover;
 			sourceTree = "<group>";
 		};
-		87A930122149C27500003807 /* Resources */ = {
+		873E8A1F2149C6F8007749C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				87A930002149C1B600003807 /* AppDelegate.swift */,
-				87A930022149C1B600003807 /* ViewController.swift */,
-				87A930042149C1B600003807 /* Main.storyboard */,
-				87A930072149C1B700003807 /* Assets.xcassets */,
-				87A930092149C1B700003807 /* LaunchScreen.storyboard */,
-				87A9300C2149C1B700003807 /* Info.plist */,
-				87A930172149C42A00003807 /* APIKeys.plist */,
+				873E8A072149C6BA007749C3 /* AppDelegate.h */,
+				873E8A082149C6BA007749C3 /* AppDelegate.m */,
+				873E8A0D2149C6BA007749C3 /* Main.storyboard */,
+				873E8A102149C6BA007749C3 /* Assets.xcassets */,
+				873E8A122149C6BA007749C3 /* LaunchScreen.storyboard */,
+				873E8A152149C6BA007749C3 /* Info.plist */,
+				873E8A1D2149C6DD007749C3 /* APIKeys.plist */,
+				873E8A162149C6BB007749C3 /* main.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		87A930132149C27D00003807 /* Views */ = {
+		873E8A202149C70C007749C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		87A930142149C28200003807 /* View Controllers */ = {
+		873E8A212149C710007749C3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		87A930152149C28800003807 /* Model Controllers */ = {
+		873E8A222149C718007749C3 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
-		87A930162149C29200003807 /* Model */ = {
+		873E8A232149C721007749C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87A9301A2149C69100003807 /* JJTRover.h */,
-				87A9301B2149C69100003807 /* JJTRover.m */,
-				87A930192149C69100003807 /* Rover-Bridging-Header.h */,
+				873E8A242149C741007749C3 /* Rover.h */,
+				873E8A252149C741007749C3 /* Rover.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,13 +117,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		87A92FFC2149C1B600003807 /* Rover */ = {
+		873E8A032149C6BA007749C3 /* Rover */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87A9300F2149C1B700003807 /* Build configuration list for PBXNativeTarget "Rover" */;
+			buildConfigurationList = 873E8A1A2149C6BB007749C3 /* Build configuration list for PBXNativeTarget "Rover" */;
 			buildPhases = (
-				87A92FF92149C1B600003807 /* Sources */,
-				87A92FFA2149C1B600003807 /* Frameworks */,
-				87A92FFB2149C1B600003807 /* Resources */,
+				873E8A002149C6BA007749C3 /* Sources */,
+				873E8A012149C6BA007749C3 /* Frameworks */,
+				873E8A022149C6BA007749C3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -131,26 +131,24 @@
 			);
 			name = Rover;
 			productName = Rover;
-			productReference = 87A92FFD2149C1B600003807 /* Rover.app */;
+			productReference = 873E8A042149C6BA007749C3 /* Rover.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		87A92FF52149C1B600003807 /* Project object */ = {
+		873E89FC2149C6BA007749C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "John Tate";
 				TargetAttributes = {
-					87A92FFC2149C1B600003807 = {
+					873E8A032149C6BA007749C3 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
 					};
 				};
 			};
-			buildConfigurationList = 87A92FF82149C1B600003807 /* Build configuration list for PBXProject "Rover" */;
+			buildConfigurationList = 873E89FF2149C6BA007749C3 /* Build configuration list for PBXProject "Rover" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -158,56 +156,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 87A92FF42149C1B600003807;
-			productRefGroup = 87A92FFE2149C1B600003807 /* Products */;
+			mainGroup = 873E89FB2149C6BA007749C3;
+			productRefGroup = 873E8A052149C6BA007749C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87A92FFC2149C1B600003807 /* Rover */,
+				873E8A032149C6BA007749C3 /* Rover */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		87A92FFB2149C1B600003807 /* Resources */ = {
+		873E8A022149C6BA007749C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A9300B2149C1B700003807 /* LaunchScreen.storyboard in Resources */,
-				87A930182149C42A00003807 /* APIKeys.plist in Resources */,
-				87A930082149C1B700003807 /* Assets.xcassets in Resources */,
-				87A930062149C1B600003807 /* Main.storyboard in Resources */,
+				873E8A142149C6BA007749C3 /* LaunchScreen.storyboard in Resources */,
+				873E8A1E2149C6DD007749C3 /* APIKeys.plist in Resources */,
+				873E8A112149C6BA007749C3 /* Assets.xcassets in Resources */,
+				873E8A0F2149C6BA007749C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		87A92FF92149C1B600003807 /* Sources */ = {
+		873E8A002149C6BA007749C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A930032149C1B600003807 /* ViewController.swift in Sources */,
-				87A9301C2149C69100003807 /* JJTRover.m in Sources */,
-				87A930012149C1B600003807 /* AppDelegate.swift in Sources */,
+				873E8A262149C741007749C3 /* Rover.m in Sources */,
+				873E8A172149C6BB007749C3 /* main.m in Sources */,
+				873E8A092149C6BA007749C3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		87A930042149C1B600003807 /* Main.storyboard */ = {
+		873E8A0D2149C6BA007749C3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				87A930052149C1B600003807 /* Base */,
+				873E8A0E2149C6BA007749C3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		87A930092149C1B700003807 /* LaunchScreen.storyboard */ = {
+		873E8A122149C6BA007749C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				87A9300A2149C1B700003807 /* Base */,
+				873E8A132149C6BA007749C3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -215,7 +213,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		87A9300D2149C1B700003807 /* Debug */ = {
+		873E8A182149C6BB007749C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,12 +268,10 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		87A9300E2149C1B700003807 /* Release */ = {
+		873E8A192149C6BB007749C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -323,17 +319,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		87A930102149C1B700003807 /* Debug */ = {
+		873E8A1B2149C6BB007749C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74SYWHWN72;
 				INFOPLIST_FILE = Rover/Info.plist;
@@ -343,18 +336,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Rover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Rover/Model/Rover-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		87A930112149C1B700003807 /* Release */ = {
+		873E8A1C2149C6BB007749C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74SYWHWN72;
 				INFOPLIST_FILE = Rover/Info.plist;
@@ -364,8 +353,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Rover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Rover/Model/Rover-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -373,25 +360,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		87A92FF82149C1B600003807 /* Build configuration list for PBXProject "Rover" */ = {
+		873E89FF2149C6BA007749C3 /* Build configuration list for PBXProject "Rover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87A9300D2149C1B700003807 /* Debug */,
-				87A9300E2149C1B700003807 /* Release */,
+				873E8A182149C6BB007749C3 /* Debug */,
+				873E8A192149C6BB007749C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87A9300F2149C1B700003807 /* Build configuration list for PBXNativeTarget "Rover" */ = {
+		873E8A1A2149C6BB007749C3 /* Build configuration list for PBXNativeTarget "Rover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87A930102149C1B700003807 /* Debug */,
-				87A930112149C1B700003807 /* Release */,
+				873E8A1B2149C6BB007749C3 /* Debug */,
+				873E8A1C2149C6BB007749C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 87A92FF52149C1B600003807 /* Project object */;
+	rootObject = 873E89FC2149C6BA007749C3 /* Project object */;
 }
