@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JJTRover;
+@class JJTSol;
 
 @interface JJTPhotosCollectionViewController : UICollectionViewController
+
+@property (nonatomic) JJTRover *rover;
+@property (nonatomic) JJTSol *sol;
 
 @end

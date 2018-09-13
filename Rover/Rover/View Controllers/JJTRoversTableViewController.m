@@ -92,6 +92,7 @@
         
         JJTSolsTableViewController *destinationVC = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        // send rover to landing pad in JJTSolsTableViewController
         destinationVC.rover = self.rovers[indexPath.row];
     }
 }
