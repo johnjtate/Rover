@@ -48,6 +48,9 @@
 - (void)fetchMissionManifestForRoverNamed:(NSString *)roverName completion:(void(^)(JJTRover *rover, NSError *error))completion {
     
     NSURL *url = [[self class] URLForInfoFromRover:roverName];
+    
+    NSLog(@"%@", [url absoluteString]);
+    
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
@@ -157,7 +160,7 @@
 // URL example: https://api.nasa.gov/mars-photos/api/v1/manifests/Curiosity/?api_key=3h1jtAaOPPmCyPQExwef4nUEI42fb06ISNhuMPoy
 + (NSURL *)URLForInfoFromRover:(NSString *)roverName {
     NSURL *url = [self baseURL];
-    url = [url URLByAppendingPathComponent:@"rovers"];
+    url = [url URLByAppendingPathComponent:@"manifests"];
     url = [url URLByAppendingPathComponent:roverName];
     
     NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];

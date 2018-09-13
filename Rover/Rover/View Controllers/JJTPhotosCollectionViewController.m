@@ -7,8 +7,13 @@
 //
 
 #import "JJTPhotosCollectionViewController.h"
+#import "JJTSol.h"
+#import "JJTRover.h"
+#import "JJTPhoto.h"
 
 @interface JJTPhotosCollectionViewController ()
+
+
 
 @end
 
