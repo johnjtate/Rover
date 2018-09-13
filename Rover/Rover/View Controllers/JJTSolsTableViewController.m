@@ -7,6 +7,9 @@
 //
 
 #import "JJTSolsTableViewController.h"
+#import "JJTRover.h"
+#import "JJTSol.h"
+#import "JJTPhotosCollectionViewController.h"
 
 @interface JJTSolsTableViewController ()
 
