@@ -14,22 +14,109 @@
 
 - (void)fetchAllMarsRoversWithCompletion:(void(^)(NSArray *roverNames, NSError *error))completion {
  
+    NSURL *url = [[self class] roversEndpoint];
     
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Error fetching rover names");
+            completion(nil, error);
+            return;
+        }
+        
+        NSLog(@"%@", response);
+        
+        if (!data) {
+            NSLog(@"No rover name data available");
+            completion(nil, nil);
+            return;
+        }
+        
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        NSDictionary *roverDictionaries = jsonDictionary[@"rovers"];
+        NSMutableArray *roverNames = [NSMutableArray array];
+        for (NSDictionary *dict in roverDictionaries) {
+            NSString *name = dict[@"name"];
+            if (name) {
+                [roverNames addObject:name];
+            }
+        }
+        completion(roverNames, nil);
+    }] resume];
 }
 
-- (void)fetchMissionManifestForRoverNamed:(NSString *)name completion:(void(^)(JJTRover *rover, NSError *error))completion {
+- (void)fetchMissionManifestForRoverNamed:(NSString *)roverName completion:(void(^)(JJTRover *rover, NSError *error))completion {
     
-    
+    NSURL *url = [[self class] URLForInfoFromRover:roverName];
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Error fetching rover manifests");
+            completion(nil, error);
+        }
+        
+        NSLog(@"%@", response);
+        
+        if (!data) {
+            NSLog(@"No rover manifest data available");
+            completion(nil, nil);
+        }
+        
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        NSDictionary *manifestDictionary = jsonDictionary[@"photo_manifest"];
+        completion([[JJTRover alloc] initWithDictionary:manifestDictionary], nil);
+    }] resume];
 }
 
 - (void)fetchPhotosFromRover:(JJTRover *)rover onSol:(NSInteger)sol completion:(void(^)(NSArray *photos, NSError *error))completion {
     
-    
+    NSURL *url = [[self class] urlForPhotosFromRover:rover.name onSol:sol];
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Error fetching photos list for rover %@", rover.name);
+            completion(nil, error);
+        }
+        
+        NSLog(@"%@", response);
+        
+        if (!data) {
+            NSLog(@"Error with photo list data for rover %@", rover.name);
+            completion(nil, nil);
+        }
+        
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        NSArray *photoDictionaries = jsonDictionary[@"photos"];
+        NSMutableArray *photos = [NSMutableArray array];
+        for (NSDictionary *dict in photoDictionaries) {
+            JJTPhoto *photo = [[JJTPhoto alloc] initWithDictionary:dict];
+            [photos addObject:photo];
+        }
+        completion(photos, nil);
+    }] resume];
 }
 
 - (void)fetchImageDataForPhoto:(JJTPhoto *)photo completion:(void(^)(NSData *imageData, NSError *error))completion {
     
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:photo.photoURL resolvingAgainstBaseURL:YES];
+    // Image URLs from JSON data use http scheme.  Alternatively, could likely change App Transport Security Settings to allow insecure protocol.  
+    urlComponents.scheme = @"https";
+    NSURL *imageURL = urlComponents.URL;
     
+    [[[NSURLSession sharedSession] dataTaskWithURL:imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Error fetching photo with identifier %@", photo.photoIdentifier);
+            completion(nil, error);
+        }
+        
+        if (!data) {
+            NSLog(@"Error with photo data for photo with identifier %@", photo.photoIdentifier);
+            completion(nil, nil);
+        }
+        completion(data, nil);
+        
+    }] resume];
 }
 
 #pragma mark - Private
