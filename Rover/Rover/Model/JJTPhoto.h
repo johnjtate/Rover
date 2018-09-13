@@ -10,6 +10,8 @@
 
 @interface JJTPhoto : NSObject
 
+-(instancetype)initWithDictionary:(NSDictionary *)photoDictionary;
+
 // photo's identifier
 @property (nonatomic, readonly) NSInteger photoIdentifier;
 // sol photo was taken
@@ -19,9 +21,6 @@
 // Earth date photo was taken
 @property (nonatomic, readonly, copy) NSString *earthDateOfPhoto;
 // url to the image
-@property (nonatomic, readonly, copy) NSString *photoURL;
-
-
-
+@property (nonatomic, readonly, copy) NSURL *photoURL;
 
 @end

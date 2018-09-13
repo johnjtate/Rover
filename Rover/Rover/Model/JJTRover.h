@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JJTSol.h"
+
+typedef NS_ENUM(NSInteger, JJTMarsRoverStatus) {
+    JJTMarsRoverStatusActive,
+    JJTMarsRoverStatusComplete,
+};
 
 @interface JJTRover : NSObject
+
+-(instancetype)initWithDictionary:(NSDictionary *)roverDictionary;
 
 // name of the rover
 @property (nonatomic, readonly, copy) NSString *name;
@@ -22,13 +28,10 @@
 // max date (on Earth) for which photos exist from the rover
 @property (nonatomic, readonly, copy) NSString *maxEarthDate;
 // status of the rover
-typedef NS_ENUM(NSInteger, DMNMarsRoverStatus) {
-    DMNMarsRoverStatusActive,
-    DMNMarsRoverStatusComplete,
-};
+@property (nonatomic, readonly) JJTMarsRoverStatus status;
 // number of photos taken by the rover
 @property (nonatomic, readonly) NSInteger numberOfPhotos;
 // array of sol descriptions
-@property (nonatomic, readonly) NSArray<JJTSol *> *solForRover;
+@property (nonatomic, readonly) NSArray *solDescription;
 
 @end

@@ -10,11 +10,13 @@
 
 @interface JJTSol: NSObject
 
+-(instancetype)initWithDictionary:(NSDictionary *)solDictionary;
+
 // which sol it is
 @property (nonatomic, readonly) NSInteger solNumber;
 // number of photos taken during the sol
 @property (nonatomic, readonly) NSInteger solNumberOfPhotos;
 // array of cameras as strings
-@property (nonatomic, readonly, copy) NSArray<NSString *> *cameras;
+@property (nonatomic, readonly, copy) NSArray *cameras;
 
 @end

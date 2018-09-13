@@ -10,8 +10,15 @@
 
 @implementation JJTSol
 
-
-
-
+-(instancetype)initWithDictionary:(NSDictionary *)solDictionary {
+    
+    self = [super init];
+    if (self) {
+        _solNumber = [solDictionary[@"sol"] integerValue];
+        _solNumberOfPhotos = [solDictionary[@"total_photos"] integerValue];
+        _cameras = [solDictionary[@"cameras"] copy];
+    }
+    return self;
+}
 
 @end
