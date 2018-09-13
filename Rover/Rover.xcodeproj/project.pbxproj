@@ -22,6 +22,8 @@
 		873E8A38214A0648007749C3 /* JJTSolsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A37214A0648007749C3 /* JJTSolsTableViewController.m */; };
 		873E8A3B214A066A007749C3 /* JJTPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A3A214A066A007749C3 /* JJTPhotosCollectionViewController.m */; };
 		873E8A3E214A06E1007749C3 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E8A3D214A06E1007749C3 /* PhotoDetailViewController.swift */; };
+		8742AF25214AF76100FCA802 /* JJTPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8742AF24214AF76100FCA802 /* JJTPhotoCollectionViewCell.m */; };
+		8742AF28214B01D200FCA802 /* JJTPhotoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8742AF27214B01D200FCA802 /* JJTPhotoCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,10 @@
 		873E8A3A214A066A007749C3 /* JJTPhotosCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JJTPhotosCollectionViewController.m; path = "Rover/View Controllers/JJTPhotosCollectionViewController.m"; sourceTree = SOURCE_ROOT; };
 		873E8A3C214A06E0007749C3 /* Rover-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rover-Bridging-Header.h"; sourceTree = "<group>"; };
 		873E8A3D214A06E1007749C3 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		8742AF23214AF76100FCA802 /* JJTPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		8742AF24214AF76100FCA802 /* JJTPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		8742AF26214B01D200FCA802 /* JJTPhotoCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTPhotoCache.h; sourceTree = "<group>"; };
+		8742AF27214B01D200FCA802 /* JJTPhotoCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTPhotoCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,8 @@
 		873E8A202149C70C007749C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8742AF23214AF76100FCA802 /* JJTPhotoCollectionViewCell.h */,
+				8742AF24214AF76100FCA802 /* JJTPhotoCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +142,8 @@
 		873E8A222149C718007749C3 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8742AF26214B01D200FCA802 /* JJTPhotoCache.h */,
+				8742AF27214B01D200FCA802 /* JJTPhotoCache.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -233,9 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8742AF25214AF76100FCA802 /* JJTPhotoCollectionViewCell.m in Sources */,
 				873E8A292149C787007749C3 /* JJTPhoto.m in Sources */,
 				873E8A262149C741007749C3 /* JJTRover.m in Sources */,
 				873E8A2C2149C793007749C3 /* JJTSol.m in Sources */,
+				8742AF28214B01D200FCA802 /* JJTPhotoCache.m in Sources */,
 				873E8A322149EA0E007749C3 /* JJTMarsRoverClient.m in Sources */,
 				873E8A35214A0628007749C3 /* JJTRoversTableViewController.m in Sources */,
 				873E8A172149C6BB007749C3 /* main.m in Sources */,

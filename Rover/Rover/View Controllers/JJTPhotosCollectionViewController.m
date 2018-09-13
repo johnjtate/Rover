@@ -8,96 +8,140 @@
 
 #import "JJTPhotosCollectionViewController.h"
 #import "JJTSol.h"
-#import "JJTRover.h"
+#import "JJTMarsRoverClient.h"
 #import "JJTPhoto.h"
+#import "JJTPhotoCollectionViewCell.h"
+#import "PhotoDetailViewController.swift"
+#import "JJTPhotoCache.h"
 
 @interface JJTPhotosCollectionViewController ()
 
-
+@property (nonatomic, readonly) JJTMarsRoverClient *client;
+@property (nonatomic, copy) NSArray *photoReferences;
 
 @end
 
 @implementation JJTPhotosCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+//static NSString * const reuseIdentifier = @"PhotoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+
+    [self fetchPhotoReferences];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Private
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)fetchPhotoReferences {
+    
+    if (!self.rover || !self.sol) {
+        return;
+    }
+    
+    JJTMarsRoverClient *client = [[JJTMarsRoverClient alloc] init];
+    [client fetchPhotosFromRover:self.rover onSol:self.sol.solNumber completion:^(NSArray *photos, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error getting photo references for %@ on %@: %@", self.rover, self.sol, error);
+            return;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photoReferences = photos;
+        });
+    }];
 }
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+
+    return self.photoReferences.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    JJTPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
+    
+    JJTPhoto *photo = self.photoReferences[indexPath.row];
+    
+    JJTPhotoCache *cache = [JJTPhotoCache sharedCache];
+    NSData *cachedData = [cache imageDataForIdentifier:photo.photoIdentifier];
+    if (cachedData) {
+        
+        cell.photoImageView.image = [UIImage imageWithData:cachedData];
+        return cell;
+    } else {
+        cell.photoImageView.image = [UIImage imageNamed:@"MarsPlaceholder"];
+    }
+    
+    [self.client fetchImageDataForPhoto:photo completion:^(NSData *imageData, NSError *error) {
+        
+        if (error || !imageData) {
+            NSLog(@"Error fetching image data for %@, %@", photo, error);
+            return;
+        }
+        
+        [cache cacheImageData:imageData forIdentifier:photo.photoIdentifier];
+        UIImage *image = [UIImage imageWithData:imageData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (![indexPath isEqual:[collectionView indexPathForCell:cell]]) {
+                return;
+            }
+            cell.photoImageView.image = image;
+        });
+    }];
     
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark - Navigation
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"toPhotoDetailView"]) {
+        
+        PhotoDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+        detailVC.photo = self.photoReferences[indexPath.row];
+    }
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+#pragma mark - Properties
+
+@synthesize client = _client;
+- (JJTMarsRoverClient *)client {
+    
+    if (!_client) {
+        _client = [[JJTMarsRoverClient alloc] init];
+    }
+    return _client;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+- (void)setRover:(JJTRover *)rover {
+    
+    if (rover != _rover) {
+        _rover = rover;
+        [self fetchPhotoReferences];
+    }
 }
-*/
+
+- (void)setSol:(JJTSol *)sol {
+    
+    if (sol != _sol) {
+        _sol = sol;
+        [self fetchPhotoReferences];
+    }
+}
+
+- (void)setPhotoReferences:(NSArray *)photoReferences {
+    
+    if (photoReferences != _photoReferences) {
+        _photoReferences = [photoReferences copy];
+        [self.collectionView reloadData];
+    }
+}
 
 @end
