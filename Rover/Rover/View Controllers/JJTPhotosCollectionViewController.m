@@ -11,8 +11,8 @@
 #import "JJTMarsRoverClient.h"
 #import "JJTPhoto.h"
 #import "JJTPhotoCollectionViewCell.h"
-#import "PhotoDetailViewController.swift"
 #import "JJTPhotoCache.h"
+#import "Rover-Swift.h"
 
 @interface JJTPhotosCollectionViewController ()
 

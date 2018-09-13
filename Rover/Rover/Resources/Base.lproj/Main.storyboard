@@ -184,7 +184,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-Tu-e8F">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqb-OE-7UY">
                                                 <rect key="frame" x="29" y="0.0" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -201,7 +201,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqb-OE-7UY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-Tu-e8F">
                                                 <rect key="frame" x="41" y="0.0" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -211,7 +211,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i3A-qk-e3J">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="i3A-qk-e3J" userLabel="Image View">
                                 <rect key="frame" x="75" y="84" width="225" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="N7I-Td-OkR"/>
@@ -228,6 +228,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AWh-dH-wHH"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraLabel" destination="aQ9-m7-Rgl" id="RsM-UD-ssy"/>
+                        <outlet property="dateLabel" destination="vwP-Tu-e8F" id="XcP-01-ewV"/>
+                        <outlet property="imageVieew" destination="i3A-qk-e3J" id="4dZ-Nf-sl8"/>
+                        <outlet property="imageView" destination="i3A-qk-e3J" id="bIB-9H-1eM"/>
+                        <outlet property="solLabel" destination="Nqb-OE-7UY" id="SNx-N2-lPF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voE-bp-6Q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

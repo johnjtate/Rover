@@ -19,7 +19,7 @@
 // name of the camera that took the photo
 @property (nonatomic, readonly, copy) NSString *cameraName;
 // Earth date photo was taken
-@property (nonatomic, readonly, copy) NSString *earthDateOfPhoto;
+@property (nonatomic, readonly, copy) NSDate *earthDateOfPhoto;
 // url to the image
 @property (nonatomic, readonly, copy) NSURL *photoURL;
 
