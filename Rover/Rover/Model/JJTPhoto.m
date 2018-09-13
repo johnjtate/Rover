@@ -10,6 +10,19 @@
 
 @implementation JJTPhoto
 
++ (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+        dateFormatter.dateFormat = @"yyyy-MM-dd";
+    });
+    return dateFormatter;
+}
+
 -(instancetype)initWithDictionary:(NSDictionary *)photoDictionary {
     
     self = [super init];
@@ -19,7 +32,9 @@
         _photoIdentifier = [photoDictionary[@"id"] integerValue];
         _solPhotoWasTaken = [photoDictionary[@"sol"] integerValue];
         _cameraName = photoDictionary[@"camera"][@"name"];
-        _earthDateOfPhoto = photoDictionary[@"earth_date"];
+        // have to format earthDateOfPhoto using dateFormatter
+        NSString *earthDateString = photoDictionary[@"earth_date"];
+        _earthDateOfPhoto = [[[self class] dateFormatter] dateFromString:earthDateString];
         // convert the URL string into a URL
         _photoURL = [NSURL URLWithString:photoDictionary[@"img_src"]];
         // return nil is there is no image
